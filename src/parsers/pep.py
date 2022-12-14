@@ -33,7 +33,7 @@ def get_url(row: Tag) -> str:
 
 
 def get_status_from_page(soup: BeautifulSoup):
-    tag = find_tag(soup, text="Status").parent
+    tag = find_tag(soup, string="Status").parent
     sibling = tag.find_next_sibling()
     if sibling is None:
         raise ParserFindTagException("Не найден тег статуса.")

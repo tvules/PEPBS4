@@ -16,7 +16,7 @@ TAG_PATTERN = r"What’s New In Python \d+\.\d+"
 
 
 def get_a_tags(soup: Tag) -> ResultSet:
-    return find_tags(soup, "a", text=re.compile(TAG_PATTERN))
+    return find_tags(soup, "a", string=re.compile(TAG_PATTERN))
 
 
 def get_info_from_page(soup: Tag) -> Tuple[str, str]:
@@ -25,7 +25,7 @@ def get_info_from_page(soup: Tag) -> Tuple[str, str]:
         tag = find_tag(
             soup,
             "dt",
-            text=re.compile(r"^(editor\w*|author\w*)$", re.IGNORECASE),
+            string=re.compile(r"^(editor\w*|author\w*)$", re.IGNORECASE),
         )
         editor = tag.find_next_sibling().text.strip()
     except ParserFindTagException:

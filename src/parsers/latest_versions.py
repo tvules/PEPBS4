@@ -18,7 +18,7 @@ def get_sidebar(soup: Tag) -> Tag:
 
 def get_a_tags(soup: Tag) -> ResultSet:
     return find_tags(
-        soup, "a", text=re.compile(TAG_PATTERN + r"|All versions")
+        soup, "a", string=re.compile(TAG_PATTERN + r"|All versions")
     )
 
 
