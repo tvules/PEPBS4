@@ -29,10 +29,7 @@ def parse_tag(tag: Tag) -> Tuple[str, str, str]:
         link = ""
 
     matched = re.search(TAG_PATTERN, tag.text)
-    if matched is None:
-        return link, tag.text, ""
-
-    version, status = matched.groups()
+    version, status = matched.groups() if matched is not None else tag.text, ''
     return link, version, status
 
 

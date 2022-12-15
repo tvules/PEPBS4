@@ -25,3 +25,4 @@ EXPECTED_STATUS = {
     "W": ("Withdrawn",),
     "": ("Draft", "Active"),
 }
+OUTPUT_CHOICES = ("pretty", "file")
